@@ -1,0 +1,72 @@
+////////////////////R1-CORE
+
+en
+conf t
+
+ip dhcp excluded-address 172.18.0.1 172.18.0.4
+ip dhcp excluded-address 172.18.16.1 172.18.16.4
+ip dhcp excluded-address 172.18.18.65 172.18.18.68
+ip dhcp excluded-address 172.18.18.97 172.18.18.100
+ip dhcp excluded-address 172.18.17.1 172.18.17.4
+ip dhcp excluded-address 172.18.17.129 172.18.17.132
+
+ip dhcp pool vlan10
+network 172.18.0.0 255.255.240.0
+default-router 172.18.0.1
+exit
+
+ip dhcp pool vlan20
+network 172.18.16.0 255.255.255.0
+default-router 172.18.16.1
+exit
+
+ip dhcp pool vlan30
+network 172.18.18.64 255.255.255.224
+default-router 172.18.18.65
+exit
+
+ip dhcp pool vlan40
+network 172.18.18.96 255.255.255.224
+default-router 172.18.18.97
+exit
+
+ip dhcp pool vlan50
+network 172.18.17.0 255.255.255.128
+default-router 172.18.17.1
+exit
+
+ip dhcp pool vlan60
+network 172.18.17.128 255.255.255.128
+default-router 172.18.17.129
+exit
+
+
+
+
+ipv6 dhcp pool vlan10v6
+ address prefix 2001:25:18:0::/64
+exit
+
+ipv6 dhcp pool vlan20v6
+ address prefix 2001:25:18:1::/64
+exit
+
+ipv6 dhcp pool vlan30v6
+ address prefix 2001:25:18:5::/64
+exit
+
+ipv6 dhcp pool vlan40v6
+ address prefix 2001:25:18:6::/64
+exit
+
+ipv6 dhcp pool vlan50v6
+ address prefix 2001:25:18:2::/64
+exit
+
+ipv6 dhcp pool vlan60v6
+ address prefix 2001:25:18:3::/64
+exit
+
+ 
+
+
